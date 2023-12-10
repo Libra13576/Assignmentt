@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="~/Scripts/script.js"></script>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body>
+    <div class="container dflex white">
+        <div class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark" style="background-color: #ff5600 !important;">
+            <div class="container">
+                @Html.ActionLink("Shoppee", "Index", "Sach", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                    <ul class="nav navbar-nav" style="margin-top:-6px;">
+                        <li><span style="margin:0px;"><a style="text-decoration: none;" href="@Url.Action("ShowCart","ShoppingCart")"><img src="~/Content/images/Giohang.jpg" style="height: 30px; width: 30px; margin-top: 10px; border-radius: 50%;" />@Html.Action("BagCart", "ShoppingCart")</a></span></li>
+                        <li style="margin-top: 10px;"><a style="padding: 0px 20px; color: white; text-decoration: none;" href="@Url.Action("Dangky","DangNhap")">Đăng Ký</a></li>
+                        <li style=" margin-top: 10px; "><a style="padding: 0px 20px; color: white; text-decoration: none;" href="@Url.Action("Index","DangNhap")">Đăng Nhập</a></li>
+                        <li style=" margin-top: 10px; "><a style="padding: 0px 20px; color: white; text-decoration: none;" href="@Url.Action("Dangxuat", "DangNhap")">Đăng Xuất</a></li>
+                        @if (Session["ID"] == null)
+                        {
+                            <li style=" margin-top: 10px; "><a style="padding: 0px 20px; color: white; text-decoration: none;" href="@Url.Action("dangnhapadmin","DangNhap")">Đăng Nhập admin</a></li>
+                        }
+
+                        @if (Session["ID"] != null)
+                        {
+                            <li style=" margin-top: 10px; "><a style="padding: 0px 20px; color: white; text-decoration: none;" href="@Url.Action("thongtintk","DangNhap")">Thông Tin Tài Khoản</a></li>
+                            <li style=" margin-top: 10px; "><a style="padding: 0px 20px; color: white; text-decoration: none;" href="@Url.Action("dsdh","OrderPro")">Danh sách đơn hàng</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <footer>
+            </footer>
+        </div>
+        <script src="~/Scripts/script.js"></script>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+<div class="container dflex white">
+    <footer style="padding: 20px 0px; background-color: #FBFBFB !important;">
+        <div class="border1" style="background-color: orangered; height: 3px;"></div>
+        <div class="border2" style="background-color: white; height: 30px;"></div>
+        <div class="footer container">
+            <table width="100%">
+                <tr>
+                    <td width="20%">
+                        <p><b> CHĂM SÓC KHÁCH HÀNG</b></p>
+                        <div>
+                            <a style="text-decoration:none;color:dimgray" href="#">Trung Tâm Trợ Giúp</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Shopee Blog</a><br />
+                            <a style="text-decoration: none; color: dimgray " href="#">Shopee Mall</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Hướng Dẫn Mua Hàng</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Hướng Dẫn Bán Hàng</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Thanh Toán</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Shopee Xu</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Vận Chuyển</a><br />
+                            <a style="text-decoration: none; color: dimgray " href="#">Trả Hàng và Hoàn Tiền</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Chính Sách Bảo Hành</a><br />
+                        </div>
+                    </td>
+
+                    <td width="20%">
+                        <p><b> VỀ SHOPEE</b></p>
+                        <div class="f2">
+                            <a style="text-decoration: none; color: dimgray" href="#">Giới Thiệu Về Shopee</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Tuyển Dụng</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Điều Khoản Shopee</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Chính Sách Bảo Mật</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Chính Hãng</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Kênh Người Bán</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Flash Sales</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Chương Trình Tiếp Thị Liên Kết Shopee</a><br />
+                            <a style="text-decoration: none; color: dimgray" href="#">Liên Hệ Với Truyền Thông</a><br />
+                        </div>
+                    </td>
+                    <td width="20%">
+                        <p style="margin-top:10px;"><b>THANH TOÁN</b></p>
+                        <a href="#" target="_blank">
+                            <img src="~/Content/images/thanhtoan.png" class=" thanhtoan" style=" width: 170px; " />
+                        </a>
+                        <br />
+                        <p><b> ĐƠN VỊ VẬN CHUYỂN</b></p>
+                        <a style="text-decoration:none;" href="#" target="_blank">
+                            <img src="~/Content/images/donvivanchuyen.png" class="thanhtoan" style=" width: 170px; " />
+                        </a>
+                    </td>
+                    <td width="20%">
+                        <p style="margin-top:-140px;"><b> THEO DÕI CHÚNG TÔI TRÊN</b></p>
+                        <ul class="SOb2n7">
+                            <li class="o8Gbgv">
+                                <a style="text-decoration: none; color: dimgray" href="https://www.facebook.com/ShopeeVN" class="FA0WjS" title="" target="_blank" rel="noopener noreferrer">
+                                    <img class="_6ZyW8Y" src="https://down-vn.img.susercontent.com/file/2277b37437aa470fd1c71127c6ff8eb5">
+                                    <span class="xTjlXx">Facebook</span>
+                                </a>
+                            </li>
+                            <li class="o8Gbgv">
+                                <a style="text-decoration: none; color: dimgray" href="https://instagram.com/Shopee_VN" class="FA0WjS" title="" target="_blank" rel="noopener noreferrer">
+                                    <img class="_6ZyW8Y" src="https://down-vn.img.susercontent.com/file/5973ebbc642ceee80a504a81203bfb91">
+                                    <span class="xTjlXx">Instagram</span>
+                                </a>
+                            </li>
+                            <li class="o8Gbgv">
+                                <a style="text-decoration: none; color: dimgray" href="https://www.linkedin.com/company/shopee" class="FA0WjS" title="" target="_blank" rel="noopener noreferrer">
+                                    <img class="_6ZyW8Y" src="https://down-vn.img.susercontent.com/file/f4f86f1119712b553992a75493065d9a">
+                                    <span class="xTjlXx">LinkedIn</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </td>
+                    <td width="20%">
+                        <p style="margin-top:-120px;"><b>TẢI ỨNG DỤNG SHOPEE NGAY THÔI </b></p>
+                        <a style="text-decoration: none; color: dimgray" href="https://shopee.vn/web" target="_blank">
+                            <img src="~/Content/images/downapp.png" class="downapp" style="width:200px;" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+</div>
+
+</html>

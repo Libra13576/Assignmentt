@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Assignmentt.Models.Sach>
+
+@{
+    ViewBag.Title = "Hangtonkho";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hangtonkho</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tensach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iddm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thongtinsach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idnxb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hinhanh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tensach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iddm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thongtinsach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idnxb)
+        </td>
+        <td>
+            <img src="@Url.Content(item.hinhanh)" height="150" width="150" style="border-radius: 16px; width: 200px;" />
+        </td>
+    </tr>
+}
+
+</table>

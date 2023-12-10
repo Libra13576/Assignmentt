@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Assignmentt.Models.donhang>
+
+@{
+    ViewBag.Title = "dsdh";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>dsdh</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaydh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idkh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hoten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sdt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tonggia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngaydh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idkh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hoten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sdt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tonggia)
+        </td>
+    </tr>
+}
+
+</table>

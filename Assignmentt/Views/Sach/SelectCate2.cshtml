@@ -1,0 +1,3 @@
+﻿@model Assignmentt.Models.nhaxuatban
+@Html.DropDownListFor(model => model.tennxb, new SelectList(Model.ListCate.OrderBy(Model => Model.tennxb), "id", "tennxb"), "--Select Cate--")
+

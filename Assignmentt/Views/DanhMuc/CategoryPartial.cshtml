@@ -1,0 +1,15 @@
+﻿@using Assignmentt.Models
+@model List<Danhmuc>
+
+<ul style=" display: flex; ">
+    @{
+        foreach (var item in Model)
+        {
+            <li class="div-cate" style=" margin: 0px 20px; ">
+                <a href="@Url.Action("Index", "Sach", new { category = item.id})" style="color: white ; text-decoration: none;">
+                    @item.tendm
+                </a>
+            </li>
+        }
+    }
+</ul>
